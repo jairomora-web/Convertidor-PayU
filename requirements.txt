@@ -2,3 +2,4 @@ pandas
 xlsxwriter
 streamlit
 openpyxl
+xlrd
