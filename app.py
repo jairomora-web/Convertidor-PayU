@@ -4,6 +4,42 @@ from datetime import datetime
 import streamlit as st
 import io
 
+# Estilos visuales estilo BOLD
+st.markdown("""
+    <style>
+    /* Fondo general */
+    .stApp {
+        background-color: #FAFAFA;
+    }
+    /* Título principal */
+    h1 {
+        color: #0F172A !important;
+    }
+    /* Botón de descarga */
+    div.stDownloadButton > button {
+        background-color: #FF0051 !important;
+        color: #FFFFFF !important;
+        border-radius: 8px !important;
+        border: none !important;
+        font-weight: bold !important;
+        padding: 12px 24px !important;
+        font-size: 16px !important;
+    }
+    /* Efecto al pasar el cursor sobre el botón */
+    div.stDownloadButton > button:hover {
+        background-color: #D90043 !important;
+        color: #FFFFFF !important;
+    }
+    /* Caja donde se arrastran los archivos */
+    [data-testid="stFileUploader"] {
+        background-color: #FFFFFF;
+        border: 2px dashed #FF0051;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 # 1. Interfaz de Usuario
 st.set_page_config(page_title="Convertidor PayU", page_icon="📄")
 st.title("📄 Convertidor de Archivos PAYU")
