@@ -14,7 +14,7 @@ uploaded_files = st.file_uploader("📤 Seleccione los archivos de PayU a proces
 # 2. Función para procesar cada archivo
 @st.cache_data
 def procesar_archivo(file_name, file_content):
-    df = pd.read_excel(file_content, header=4).dropna(how='all')
+    df = pd.read_excel(io.BytesIO(file_content), header=4).dropna(how='all')
 
     df['ID_PAGO'] = df['DESCRIPCION'].apply(
         lambda x: re.search(r'\[(.*?)\]', str(x)).group(1) if pd.notna(x) and re.search(r'\[(.*?)\]', str(x)) else None
